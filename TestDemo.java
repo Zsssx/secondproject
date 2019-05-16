@@ -42,7 +42,6 @@ class Book{
 
 public class TestDemo {
     public static  void main(String args[]){
-        Book book=new Book("Java的实战开发");
-        book.getInfo();
+        new Book("Java的实战开发",18.8).getInfo();
     }
 }
