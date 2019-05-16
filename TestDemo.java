@@ -4,6 +4,11 @@ class Book{
     private String title;
     private double price;
 
+    public Book(String t,double p){
+        setTitle(t);
+        setPrice(p);
+    }
+
     public void setTitle(String t) {
         title = t;
     }
@@ -27,9 +32,7 @@ class Book{
 
 public class TestDemo {
     public static  void main(String args[]){
-        Book book=new Book();
-        book.setPrice(278.5);
-        book.setTitle("Windows 程序设计第五版");
+        Book book=new Book("Windows 程序设计第五版",499.5);
         book.getInfo();
     }
 }
