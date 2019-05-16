@@ -4,9 +4,19 @@ class Book{
     private String title;
     private double price;
 
+    public Book(){
+        System.out.println("无参数的构造方法");
+    }
+
+    public Book(String t){
+        setTitle(t);
+        System.out.println("有一个参数的构造方法");
+    }
+
     public Book(String t,double p){
         setTitle(t);
         setPrice(p);
+        System.out.println("有两个参数的构造方法");
     }
 
     public void setTitle(String t) {
@@ -32,7 +42,7 @@ class Book{
 
 public class TestDemo {
     public static  void main(String args[]){
-        Book book=new Book("Windows 程序设计第五版",499.5);
+        Book book=new Book("Java的实战开发");
         book.getInfo();
     }
 }
