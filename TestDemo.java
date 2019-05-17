@@ -1,48 +1,54 @@
 package secondproject;
 
-class Book{
-    private String title;
-    private double price;
-
-    public Book(){
-        System.out.println("无参数的构造方法");
+class Emp{
+    private int empno ; //雇员编号
+    private String ename ; //雇员姓名
+    private String job ;   //雇员职位
+    private double sal ;   //雇员薪资
+    public Emp(){  //定义一个无参构造方法
+    }
+    public Emp(int eno, String ena, String j, double s){   //有参构造
+        empno = eno;                                  //为属性赋值
+        ename = ena;                                  //为属性赋值
+        job = j;                                      //为属性赋值
+        sal = s;                                      //为属性赋值
+    }
+    public void setEmpno(int e){                    //设置empno属性
+        empno = e;
     }
 
-    public Book(String t){
-        setTitle(t);
-        System.out.println("有一个参数的构造方法");
+    public void setEname(String e){                 //设置ename属性
+        ename = e;
     }
-
-    public Book(String t,double p){
-        setTitle(t);
-        setPrice(p);
-        System.out.println("有两个参数的构造方法");
+    public void setJob(String j){                   //设置job 属性
+        job = j;
     }
-
-    public void setTitle(String t) {
-        title = t;
+    public void setSal(double s){                   //设置sal属性
+        sal = s;
     }
-
-    public void setPrice(double p) {
-        price = p;
+    public int getEmpno(){                          //取得empno 内容
+        return empno;
     }
-
-    public String getTitle() {
-        return title;
+    public String getEname(){                       //取得ename内容
+        return ename;
     }
-
-    public double getPrice(){
-        return price;
+    public String getJob(){                         //取得job 内容
+        return job;
     }
-
-    public void getInfo(){
-        System.out.println("图书名称："+title+"，价格："+price);
+    public  double getSal(){                        //取得sal内容
+        return sal;
+    }
+    public String getInfo(){
+        return "雇员编号：" + empno + "\n" +
+                "雇员姓名：" +  ename + "\n" +
+                "雇员职位：" + job + "\n" +
+                "雇员工资：" + sal;
     }
 }
 
-public class TestDemo {
-    public static  void main(String args[]){
-        Book book=new Book("Java的实战开发");
-        book.getInfo();
+public class TestDemo{
+    public static void main(String args[]){
+        Emp e = new Emp(7369,"XXX","CEO",2000000.0);
+        System.out.println(e.getInfo());
     }
 }
